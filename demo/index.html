@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Generator Pro - Secure & Versatile ID Generation</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <h1>ID Generator <span>Pro</span></h1>
+            </div>
+            <p class="subtitle">Generate secure, unique IDs for any platform with ease.</p>
+        </header>
+
+        <section class="generator-card">
+            <div class="card-header">
+                <h2>Try it out</h2>
+                <div class="badge">SECURE</div>
+            </div>
+
+            <div class="output-container">
+                <div id="id-output" class="id-display">Generating...</div>
+                <button id="copy-btn" class="icon-btn" title="Copy to clipboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                </button>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label>ID Type</label>
+                    <div class="segmented-control">
+                        <button class="active" data-type="alphanumeric">Alphanumeric</button>
+                        <button data-type="numeric">Numeric</button>
+                        <button data-type="alpha">Alpha</button>
+                    </div>
+                </div>
+
+                <div class="control-grid">
+                    <div class="control-group">
+                        <label for="length-input">Length</label>
+                        <input type="number" id="length-input" value="16" min="1" max="128">
+                    </div>
+                    <div class="control-group">
+                        <label for="prefix-input">Prefix</label>
+                        <input type="text" id="prefix-input" placeholder="e.g. user_">
+                    </div>
+                </div>
+
+                <button id="generate-btn" class="primary-btn">
+                    <span>Regenerate ID</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="presets">
+            <h3>Presets</h3>
+            <div class="preset-grid">
+                <button class="preset-card" data-preset="userId">
+                    <span class="preset-title">User ID</span>
+                    <span class="preset-desc">prefix: user_ (12 chars)</span>
+                </button>
+                <button class="preset-card" data-preset="contentId">
+                    <span class="preset-title">Content ID</span>
+                    <span class="preset-desc">prefix: cnt_ (16 chars)</span>
+                </button>
+                <button class="preset-card" data-preset="urlId">
+                    <span class="preset-title">URL ID</span>
+                    <span class="preset-desc">alphanumeric (8 chars)</span>
+                </button>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Built with ❤️ and ID Generator Pro</p>
+            <div class="links">
+                <a href="#">Documentation</a>
+                <a href="#">GitHub</a>
+                <a href="#">NPM</a>
+            </div>
+        </footer>
+    </main>
+
+    <div id="toast" class="toast">Copied to clipboard!</div>
+
+    <script type="module" src="./main.ts"></script>
+</body>
+</html>
